@@ -1,0 +1,26 @@
+<ion-view view-title="Add Dish">
+
+<ion-header-bar class="bar-positive">
+<div class="buttons">
+    <button class="button" ng-click="goBack()">Grub</button>
+  </div>
+  <h1 class="title">Add Dish</h1>
+</ion-header-bar>
+  <ion-content>
+  <label class="item item-input">
+                <input type="text" ng-model="dishData.name" placeholder="Name">
+  </label>
+  <label class="item item-input">
+                <input type="text" ng-model="dishData.description" placeholder="Description">
+  </label>
+   <select id="choice" class="size-text"  ng-change="showSelectValue(slectedIndex)" ng-model="slectedIndex">
+                <option value="0" selected="selected" disabled >Select Category</option>
+                <option ng-repeat="item in DishCategoriesList" value="{{$index}}">{{item.get('name')}}</option> 
+          
+   </select>
+<button class="button button-block button-positive" ng-click="addDish()">
+            Save Dish
+        </button>
+  </ion-content>
+</ion-view>
+
